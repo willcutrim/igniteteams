@@ -11,11 +11,13 @@ export const Input = styled(TextInput)`
         font-family: ${theme.FONT_FAMILY.REGULAR};
     `}
 
-    min-height: 56px;
-    min-width: 56px;
+    min-height: 6px;
+    min-width: 84%;
 
 
-    border-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    
     margin-bottom: 12px;
     padding: 16px;
 

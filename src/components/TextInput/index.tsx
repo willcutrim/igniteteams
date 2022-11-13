@@ -2,8 +2,10 @@ import { Input } from './style';
 import { TextInputProps } from 'react-native';
 import { useTheme } from 'styled-components/native';
 
-
-export function TextInput({...rest}: TextInputProps){
+type Props = TextInputProps & {
+    placeholder: string;
+}
+export function TextInput({placeholder, ...rest}: Props){
 
     const { COLORS } = useTheme();
 
@@ -11,7 +13,7 @@ export function TextInput({...rest}: TextInputProps){
     return(
         <Input
             {...rest}
-            placeholder='Nome da turma'
+            placeholder={placeholder}
             placeholderTextColor= { COLORS.GRAY_300 }
         />
     );
