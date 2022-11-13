@@ -16,9 +16,9 @@ export const Input = styled(TextInput)`
 
 
     border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+    border-bottom-left-radius: 6px; 
     
-    margin-bottom: 12px;
+    
     padding: 16px;
 
 `;
