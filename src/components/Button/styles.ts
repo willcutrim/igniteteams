@@ -20,6 +20,9 @@ export const Container = styled(TouchableOpacity) <Props>`
 
     justify-content: center;
     align-items: center;
+
+    margin-top; 6px;
+    
 `;
 
 

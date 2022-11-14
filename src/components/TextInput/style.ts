@@ -19,6 +19,7 @@ export const Input = styled(TextInput)`
     border-bottom-left-radius: 6px; 
     
     
+    
     padding: 16px;
 
 `;
