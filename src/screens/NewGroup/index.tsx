@@ -4,14 +4,24 @@ import { Header } from '@components/Header';
 import { Highlight } from '@components/Highlight';
 import { TextInput } from '@components/TextInput';
 import { Container, Content, Icon } from './styles';
+import { useState } from 'react';
+import { groupCreate } from '@storage/group/groupCreate';
 
 
 
 export function NewGroup(){
+
+    const [group, setGroup] = useState('');
+
     const navigation = useNavigation();
 
-    function handleNew(){
-        navigation.navigate('players', {group: 'Rocket'})
+    async function handleNew(){
+        try {
+            await groupCreate(group);
+            navigation.navigate('players', { group })
+        } catch (error) {
+          console.log(error);
+        }
     }
 
     return(
@@ -27,6 +37,7 @@ export function NewGroup(){
                 />
                 <TextInput
                     placeholder='adicionar turmas'
+                    onChangeText={setGroup}
                 />
                 <Button
                     title='Criar'

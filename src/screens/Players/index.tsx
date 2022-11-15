@@ -10,19 +10,30 @@ import { FlatList } from 'react-native';
 import { PlayerCard } from '@components/PlayerCard';
 import { EmptyList } from '@components/Empty';
 import { Button } from '@components/Button';
+import { useRoute } from '@react-navigation/native';
 
+
+type RouteParams = {
+    group: string;
+};
 
 export function Players(){
 
+
+
     const [team, setTeam] = useState('time A');
-    const [players, setPlayers] = useState(['willyam', 'Deborah', 'andressa', 'adassah', 'alexandra', 'zaninha']);
+    const [players, setPlayers] = useState([]);
+
+    const route = useRoute();
+    const { group } = route.params as RouteParams;
+
 
     return(
         <Container>
             <Header showBackButton/>
 
             <Highlight
-                title='Nome da turma'
+                title={group}
                 subtitle='adicione a gelara e separe os times'
             />
             
